@@ -50,6 +50,10 @@ $(cts_dir)/all_cts_files_stamp: $(CTS_CASE_LIST) $(junit_host_jar) $(HOSTTESTLIB
 	$(hide) mkdir -p $(PRIVATE_DIR)/tools
 	$(hide) mkdir -p $(PRIVATE_DIR)/repository/testcases
 	$(hide) mkdir -p $(PRIVATE_DIR)/repository/plans
+	$(hide) cp -r  cts/unit/* out/host/linux-x86/cts/android-cts/repository/testcases/
+	$(hide) rm out/host/linux-x86/cts/android-cts/repository/testcases/Unit.xml
+	$(hide) cp cts/unit/Unit.xml out/host/linux-x86/cts/android-cts/repository/plans/
+	
 # Copy executable and JARs to CTS directory
 	$(hide) $(ACP) -fp $(DDMLIB_JAR) $(PRIVATE_JUNIT_HOST_JAR) $(HOSTTESTLIB_JAR) $(CTS_HOST_LIBRARY_JARS) $(TF_JAR) $(CTS_TF_JAR) $(CTS_TF_EXEC_PATH) $(CTS_TF_README_PATH) $(PRIVATE_DIR)/tools
 # Change mode of the executables

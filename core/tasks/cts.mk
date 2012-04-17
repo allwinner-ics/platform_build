@@ -51,8 +51,10 @@ $(cts_dir)/all_cts_files_stamp: $(CTS_CASE_LIST) $(junit_host_jar) $(HOSTTESTLIB
 	$(hide) mkdir -p $(PRIVATE_DIR)/repository/testcases
 	$(hide) mkdir -p $(PRIVATE_DIR)/repository/plans
 	$(hide) cp -r  cts/unit/* out/host/linux-x86/cts/android-cts/repository/testcases/
-	$(hide) rm out/host/linux-x86/cts/android-cts/repository/testcases/Unit.xml
-	$(hide) cp cts/unit/Unit.xml out/host/linux-x86/cts/android-cts/repository/plans/
+	$(hide) rm out/host/linux-x86/cts/android-cts/repository/testcases/ExdroidUnit.xml
+	$(hide) rm out/host/linux-x86/cts/android-cts/repository/testcases/CTS-Tradefed-windows.bat
+	$(hide) cp cts/unit/ExdroidUnit.xml out/host/linux-x86/cts/android-cts/repository/plans/
+	$(hide) cp cts/unit/CTS-Tradefed-windows.bat out/host/linux-x86/cts/android-cts/tools/
 	
 # Copy executable and JARs to CTS directory
 	$(hide) $(ACP) -fp $(DDMLIB_JAR) $(PRIVATE_JUNIT_HOST_JAR) $(HOSTTESTLIB_JAR) $(CTS_HOST_LIBRARY_JARS) $(TF_JAR) $(CTS_TF_JAR) $(CTS_TF_EXEC_PATH) $(CTS_TF_README_PATH) $(PRIVATE_DIR)/tools
